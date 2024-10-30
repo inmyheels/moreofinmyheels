@@ -9,7 +9,7 @@
     <style>
         /* General styles */
         body {
-            font-family: Boldini;
+            font-family: 'Boldlini', sans-serif;
             margin: 0;
             padding: 0;
             color: #9E122C;
@@ -105,11 +105,13 @@
 
         /* Fondo de la portada de la lista */
         #list-content {
-            background-image: url('peach.JPG'); /* Cambia esta ruta a la de tu imagen */
+            background-image: url('peach.JPG'); /* Imagen de fondo */
             background-size: cover;
             background-position: center;
-            color: #FFFFFF; /* Asegura que el texto sea visible sobre el fondo */
+            color: #FFFFFF; /* Texto visible sobre el fondo */
             padding: 2rem;
+            min-height: 100vh;
+            position: relative;
         }
 
         /* List button in menu */
@@ -183,13 +185,15 @@
 
     <!-- List content -->
     <div class="content" id="list-content">
+        <span class="star-icon" onclick="toggleSidebar()">&#9733;</span> <!-- Star icon in list section -->
         <h2>My Favs of October are Here!</h2>
         <p>Discover all my must-haves of each month!</p>
         <div class="monthly-list">
-            <a href="https://www.canva.com/design/DAGVAMdwJ7Y/g3uuevbRMq6dyklMJetJwQ/view" target="_blank">Monthly List!</a>
+            <a href="https://www.canva.com/design/DAGVAMdwJ7Y/g3uuevbRMq6dyklMJetJwQ/view" target="_blank">Monthly List!</a><br>
             <a href="https://www.canva.com/design/DAGVFX-lB_0/XE1nRSWtF0kysd1YPbo4gg/view?utm_content=DAGVFX-lB_0&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">For a movie night!</a>
         </div>
     </div>
 
 </body>
 </html>
+
