@@ -136,6 +136,7 @@
         function showHome() {
             document.querySelector('.cover').style.display = 'flex';
             document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
+            toggleSidebar(); // Show sidebar when switching sections
         }
 
         // Function to display social media in the menu
@@ -149,11 +150,13 @@
             document.querySelector('.cover').style.display = 'none';
             document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
             document.getElementById('list-content').style.display = 'block';
+            toggleSidebar(); // Show sidebar when switching sections
         }
 
         // Function to show social content
         function showSocialContent() {
             toggleSocialLinks(); // Show or hide social media links
+            toggleSidebar(); // Show sidebar when switching sections
         }
     </script>
 </head>
@@ -184,6 +187,7 @@
         <p>Discover all my must-haves of each month!</p>
         <div class="monthly-list">
             <a href="https://www.canva.com/design/DAGVAMdwJ7Y/g3uuevbRMq6dyklMJetJwQ/view" target="_blank">Monthly List!</a>
+            <a href="https://www.canva.com/design/DAGVFX-lB_0/XE1nRSWtF0kysd1YPbo4gg/view?utm_content=DAGVFX-lB_0&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">For a movie night!</a>
         </div>
     </div>
 
