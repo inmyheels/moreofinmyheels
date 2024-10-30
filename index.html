@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More of In My Heels</title>
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alder+Road&family=Boldlini&display=swap" rel="stylesheet">
+    <style>
+        /* General styles */
+        body {
+            font-family: Boldini;
+            margin: 0;
+            padding: 0;
+            color: #9E122C;
+            overflow-x: hidden;
+        }
+
+        /* Cover */
+        .cover {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('imagendeportada.jpg'); /* Path to uploaded image */
+            background-size: cover;
+            background-position: center;
+            color: #9E122C;
+            text-align: center;
+            font-size: 2rem;
+            position: relative;
+            font-family: 'Alder Road'; /* Cover font change */
+        }
+        .cover h1 {
+            z-index: 1;
+        }
+
+        /* Star-shaped button */
+        .star-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 8rem; /* Increased size */
+            color: #FBCB77;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+        .star-icon:hover {
+            color: #EE6A43;
+        }
+
+        /* Sidebar menu */
+        .sidebar {
+            position: fixed;
+            left: -220px;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #9E122C;
+            padding-top: 2rem;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: left 0.3s ease;
+            z-index: 3;
+            font-family: 'Boldlini', sans-serif; /* Sidebar font change */
+        }
+        .sidebar a {
+            display: block;
+            color: #FCECDF;
+            padding: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            padding-left: 20px;
+        }
+        .sidebar a:hover {
+            background-color: #EE6A43;
+        }
+
+        /* Social media links in menu */
+        .social-links {
+            display: none;
+            padding-left: 1rem;
+        }
+        .social-links a {
+            color: #FBCB77;
+            display:  block;
+            margin: 5px 0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social-links a:hover {
+            color: #EE6A43;
+        }
+
+        /* Hidden content sections */
+        .content {
+            display: none;
+            padding: 2rem;
+            text-align: center; /* Centering content */
+            margin-top: 2rem;
+        }
+        .content h2 {
+            color: #EE6A43;
+        }
+
+        /* Fondo de la portada de la lista */
+        #list-content {
+            background-image: url('peach.jpg'); /* Cambia esta ruta a la de tu imagen */
+            background-size: cover;
+            background-position: center;
+            color: #FFFFFF; /* Asegura que el texto sea visible sobre el fondo */
+            padding: 2rem;
+        }
+
+        /* List button in menu */
+        .product-list {
+            background-color: #FBCB77;
+            padding: 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            color: #9E122C;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+    <script>
+        // Function to open/close the sidebar
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
+        }
+
+        // Function to show the cover
+        function showHome() {
+            document.querySelector('.cover').style.display = 'flex';
+            document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
+        }
+
+        // Function to display social media in the menu
+        function toggleSocialLinks() {
+            const socialLinks = document.querySelector('.social-links');
+            socialLinks.style.display = socialLinks.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to display list content
+        function showListContent() {
+            document.querySelector('.cover').style.display = 'none';
+            document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
+            document.getElementById('list-content').style.display = 'block';
+        }
+
+        // Function to show social content
+        function showSocialContent() {
+            toggleSocialLinks(); // Show or hide social media links
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Cover -->
+    <div class="cover">
+        <h1>More of In My Heels</h1>
+        <span class="star-icon" onclick="toggleSidebar()">&#9733;</span>
+    </div>
+
+    <!-- Sidebar menu -->
+    <div class="sidebar">
+        <a href="javascript:void(0);" onclick="showHome()">Home</a>
+        <a href="javascript:void(0);" onclick="showSocialContent()">Socials</a>
+        <div class="social-links">
+            <a href="https://www.instagram.com/inmyheelscm?igsh=MWw2c296a3A0eGhm&utm_source=qr" target="_blank">Instagram</a>
+            <a href="https://pin.it/3VxOOEAsd" target="_blank">Pinterest</a>
+            <a href="https://www.youtube.com/@inmyheels" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@inmyheelscm?_t=8qxhzTHLeBp&_r=1" target="_blank">TikTok</a>
+        </div>
+        <a href="javascript:void(0);" onclick="showListContent()">List</a>
+    </div>
+
+    <!-- List content -->
+    <div class="content" id="list-content">
+        <h2>My Favs of October are Here!</h2>
+        <p>Discover all my must-haves of each month!</p>
+        <div class="monthly-list">
+            <a href="https://www.canva.com/design/DAGVAMdwJ7Y/g3uuevbRMq6dyklMJetJwQ/view" target="_blank">Monthly List!</a>
+        </div>
+    </div>
+
+</body>
+</html>
