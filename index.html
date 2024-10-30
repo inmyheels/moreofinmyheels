@@ -40,7 +40,7 @@
             position: fixed;
             top: 20px;
             left: 20px;
-            font-size: 8rem; /* Increased size */
+            font-size: 8rem;
             color: #FBCB77;
             cursor: pointer;
             z-index: 2;
@@ -62,7 +62,7 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
             transition: left 0.3s ease;
             z-index: 3;
-            font-family: 'Boldlini', sans-serif; /* Sidebar font change */
+            font-family: 'Boldlini', sans-serif;
         }
         .sidebar a {
             display: block;
@@ -83,7 +83,7 @@
         }
         .social-links a {
             color: #FBCB77;
-            display:  block;
+            display: block;
             margin: 5px 0;
             text-decoration: none;
             font-weight: bold;
@@ -96,7 +96,7 @@
         .content {
             display: none;
             padding: 2rem;
-            text-align: center; /* Centering content */
+            text-align: center;
             margin-top: 2rem;
         }
         .content h2 {
@@ -105,40 +105,48 @@
 
         /* Fondo de la portada de la lista */
         #list-content {
-            background-image: url('peach.JPG'); /* Imagen de fondo */
+            background-image: url('peach.JPG');
             background-size: cover;
             background-position: center;
-            color: #FFFFFF; /* Texto visible sobre el fondo */
+            color: #FFFFFF;
             padding: 2rem;
             min-height: 100vh;
             position: relative;
         }
 
-        /* List button in menu */
-        .product-list {
-            background-color: #FBCB77;
-            padding: 1rem;
-            border-radius: 8px;
-            display: inline-block;
-            color: #9E122C;
+        /* List links */
+        .monthly-list a {
+            color: #F99D90;
             text-decoration: none;
             font-weight: bold;
-            text-align: center;
-            margin-top: 1rem;
+            display: block;
+            margin: 10px 0;
+        }
+        .monthly-list a:hover {
+            color: #EE6A43;
         }
     </style>
     <script>
-        // Function to open/close the sidebar
+        // Toggle sidebar function
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             sidebar.style.left = sidebar.style.left === '0px' ? '-220px' : '0px';
         }
 
+        // Close sidebar when clicking outside
+        document.addEventListener('click', (event) => {
+            const sidebar = document.querySelector('.sidebar');
+            const starIcon = document.querySelector('.star-icon');
+            if (sidebar.style.left === '0px' && !sidebar.contains(event.target) && event.target !== starIcon) {
+                sidebar.style.left = '-220px';
+            }
+        });
+
         // Function to show the cover
         function showHome() {
             document.querySelector('.cover').style.display = 'flex';
             document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
-            toggleSidebar(); // Show sidebar when switching sections
+            toggleSidebar();
         }
 
         // Function to display social media in the menu
@@ -152,13 +160,13 @@
             document.querySelector('.cover').style.display = 'none';
             document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
             document.getElementById('list-content').style.display = 'block';
-            toggleSidebar(); // Show sidebar when switching sections
+            toggleSidebar();
         }
 
         // Function to show social content
         function showSocialContent() {
-            toggleSocialLinks(); // Show or hide social media links
-            toggleSidebar(); // Show sidebar when switching sections
+            toggleSocialLinks();
+            toggleSidebar();
         }
     </script>
 </head>
@@ -189,7 +197,7 @@
         <h2>My Favs of October are Here!</h2>
         <p>Discover all my must-haves of each month!</p>
         <div class="monthly-list">
-            <a href="https://www.canva.com/design/DAGVAMdwJ7Y/g3uuevbRMq6dyklMJetJwQ/view" target="_blank">Monthly List!</a><br>
+            <a href="https://www.canva.com/design/DAGVAMdwJ7Y/g3uuevbRMq6dyklMJetJwQ/view" target="_blank">Monthly List!</a>
             <a href="https://www.canva.com/design/DAGVFX-lB_0/XE1nRSWtF0kysd1YPbo4gg/view?utm_content=DAGVFX-lB_0&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">For a movie night!</a>
         </div>
     </div>
