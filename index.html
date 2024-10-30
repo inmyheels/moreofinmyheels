@@ -29,7 +29,7 @@
             text-align: center;
             font-size: 2rem;
             position: relative;
-            font-family: 'Alder Road'; /* Cover font change */
+            font-family: 'Alder Road';
         }
         .cover h1 {
             z-index: 1;
@@ -136,8 +136,8 @@
         // Close sidebar when clicking outside
         document.addEventListener('click', (event) => {
             const sidebar = document.querySelector('.sidebar');
-            const starIcon = document.querySelector('.star-icon');
-            if (sidebar.style.left === '0px' && !sidebar.contains(event.target) && event.target !== starIcon) {
+            const starIcon = document.querySelectorAll('.star-icon');
+            if (sidebar.style.left === '0px' && !sidebar.contains(event.target) && ![...starIcon].includes(event.target)) {
                 sidebar.style.left = '-220px';
             }
         });
